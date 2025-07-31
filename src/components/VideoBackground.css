@@ -1,0 +1,290 @@
+/* Video Background Styles */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Particles */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* Visual Effects */
+.visual-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Sparkles for Happy Emotion */
+.sparkles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #fff 0%, transparent 70%);
+  border-radius: 50%;
+  top: 20%;
+  left: 20%;
+}
+
+.sparkle:nth-child(odd) {
+  top: 60%;
+  left: 70%;
+  animation-delay: 0.5s;
+}
+
+.sparkle:nth-child(3n) {
+  top: 80%;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+/* Thought Bubbles for Thinking Emotion */
+.thought-bubbles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.thought-bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  left: 50%;
+  bottom: 30%;
+  transform: translateX(-50%);
+}
+
+.thought-bubble:nth-child(2) {
+  left: 45%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 0.3s;
+}
+
+.thought-bubble:nth-child(3) {
+  left: 55%;
+  width: 12px;
+  height: 12px;
+  animation-delay: 0.6s;
+}
+
+/* Dance Waves */
+.dance-waves {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: end;
+}
+
+.wave {
+  width: 6px;
+  height: 40px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 3px;
+}
+
+/* Digital Avatar */
+.digital-avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 107, 157, 0.3) 0%, transparent 70%);
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
+}
+
+.avatar-core {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 40px rgba(255, 107, 157, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.avatar-initial {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 107, 157, 0.3);
+  border-top: 3px solid #ff6b9d;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Emotion-specific Background Adjustments */
+.visual-effects.happy .avatar-glow {
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.4) 0%, transparent 70%);
+}
+
+.visual-effects.thinking .avatar-glow {
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.4) 0%, transparent 70%);
+}
+
+.visual-effects.encouraging .avatar-glow {
+  background: radial-gradient(circle, rgba(67, 233, 123, 0.4) 0%, transparent 70%);
+}
+
+.visual-effects.dancing .avatar-glow {
+  background: radial-gradient(circle, rgba(250, 112, 154, 0.4) 0%, transparent 70%);
+}
+
+.visual-effects.contemplative .avatar-glow {
+  background: radial-gradient(circle, rgba(168, 237, 234, 0.4) 0%, transparent 70%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .digital-avatar {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .avatar-core {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .avatar-initial {
+    font-size: 2rem;
+  }
+  
+  .particle {
+    width: 3px;
+    height: 3px;
+  }
+  
+  .sparkle {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .thought-bubble {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .avatar-glow,
+  .particle,
+  .sparkle,
+  .thought-bubble,
+  .wave {
+    animation: none;
+  }
+  
+  .digital-avatar {
+    animation: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .avatar-core {
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  
+  .particle,
+  .sparkle,
+  .thought-bubble {
+    background: #fff;
+  }
+}
